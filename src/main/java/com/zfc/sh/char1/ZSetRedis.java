@@ -5,6 +5,7 @@ import redis.clients.jedis.Jedis;
 public class ZSetRedis {
     public static void main(String[] args) {
         Jedis jedis = new Jedis("localhost");
+        jedis.auth("pp511622");
         jedis.del("myZSet");
         jedis.zadd("myZSet" , 1,"1key");
         jedis.zadd("myZSet" , 3,"3key");

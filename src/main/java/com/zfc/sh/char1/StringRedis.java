@@ -6,6 +6,8 @@ public class StringRedis {
     public static void main(String[] args) {
         //连接本地的 Redis 服务
         Jedis jedis = new Jedis("localhost");
+        jedis.auth("pp511622");
+
         System.out.println("连接成功");
         //设置 redis 字符串数据
         jedis.set("runoobkey", "www.runoob.com");
@@ -15,6 +17,7 @@ public class StringRedis {
         System.out.println("redis 存储的字符串为: "+ jedis.get("runoobkey"));
         jedis.set("myage",  String.valueOf(35));
         System.out.println(jedis.incr("myage"));
+
 
     }
 }
